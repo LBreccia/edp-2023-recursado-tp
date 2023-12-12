@@ -1,16 +1,18 @@
 #!/bin/bash
 
-RUTA_RECIBIDA=$1  #debe recibir una ruta ¿ASÍ? ¿Hay que hacer alguna verificación?
+RUTA_RECIBIDA=/tmp/outputs  #debe recibir una ruta ¿ASÍ? ¿Hay que hacer alguna verificación?
 
-mkdir outputs #¿hace falta?
-mkdir -p outputs/Imagenes   #si ya existen, esta función los vuelve a crear?
-mkdir -p outputs/Sonidos
-mkdir -p outputs/Textos
+[ -z "$(ls -A $RUTA_RECIBIDA)" ] && echo "El directorio está vacío, no hay nada para clasificar" && exit 1
+
+mkdir -p $RUTA_RECIBIDA/Imagenes
+mkdir -p $RUTA_RECIBIDA/Sonidos
+mkdir -p $RUTA_RECIBIDA/Textos
 
 
 CONT_IMG=1
 CONT_SND=1
 CONT_TXT=1
+
 
 for archivo in $RUTA_RECIBIDA; do
     TIPO_ARCHIVO=$(file  "$archivo")
@@ -31,5 +33,5 @@ for archivo in $RUTA_RECIBIDA; do
 	*)
 	    echo "Archivo $NOMBRE no reconocido"
 	    ;;
-esac
-
+    esac
+done
