@@ -8,7 +8,7 @@ mkdir -p $OUTPUT_DIR
 OPCIONES=("Archivo de texto" "Archivo de sonido" "Archivo de imagen")
 OPCION_ALEATORIA=${OPCIONES[$RANDOM % ${#OPCIONES[@]}]}
 
-case "$opcion_aleatoria" in
+case "$OPCION_ALEATORIA" in
     "Archivo de texto")
         # Generar un archivo de texto
         base64 /dev/urandom | head -c 500 > $OUTPUT_DIR/file.txt
