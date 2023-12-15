@@ -1,11 +1,14 @@
 #!/bin/bash
 
-function palindromeDetection {
+palindromeDetection() {
+    rev "$1" > archivo_al_reves.txt
 
-	rev $1 > archivo_al_reves.txt
-	for palabra in archivo_al_reves.txt;
-	do
-  	     grep -i $palabra $1  #busca si palabra está en el archivo original  sin distinguir min-mayus y lo muestra?
-	done
+    for palabra in $(cat archivo_al_reves.txt); do
+        grep -i "$palabra" "$1" > /dev/null && echo "Palíndromo encontrado: $palabra"
+    done
+
+    rm archivo_al_reves.txt
 }
 
+
+palindromeDetection "$1"
