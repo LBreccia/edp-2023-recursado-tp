@@ -32,3 +32,5 @@ echo "El promedio de la longitud de las palabras es " $promedio
 echo "La longitud de la palabra mas larga es " $palabra_mas_larga
 echo "La longitud de la mas corta es " $palabra_mas_corta
 }
+
+statsWords "$1"
