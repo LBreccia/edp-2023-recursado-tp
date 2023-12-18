@@ -12,3 +12,4 @@ palindromeDetection() {
 
 
 palindromeDetection "$1"
+
