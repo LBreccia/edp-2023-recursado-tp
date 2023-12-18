@@ -1,9 +1,8 @@
 #!/bin/bash
 
+read -p "Ingrese la ruta del texto a analizar: " TEXTO
+
 PS3='Elija> '
-
-read -p "Ingrese el texto a analizar: " TEXTO
-
 
 echo "Selecciona el tipo de análisis a realizar."
 select opcion in "Indicador estadístico de longitud de palabra" "Mostrar palabras palíndromos" "Detectar y listar direcciones de mail" "Salir"
