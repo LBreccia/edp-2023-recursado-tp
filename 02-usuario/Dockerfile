@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 
-ADD ["opt/", "/opt/"]
+RUN apt-get update
+RUN apt-get install -y curl file
+
+ADD ["opt/", "opt/"]
 
 ENTRYPOINT ["/opt/src/menu.sh"]
