@@ -1,4 +1,4 @@
-#!/bin/bashtmp/output
+#!/bin/bash
 
 #Generador aleatorio de archivos
 
